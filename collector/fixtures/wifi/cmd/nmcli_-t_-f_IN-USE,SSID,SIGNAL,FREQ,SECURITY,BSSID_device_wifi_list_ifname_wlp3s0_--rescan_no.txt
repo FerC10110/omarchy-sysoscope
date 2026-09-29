@@ -1,0 +1,7 @@
+*:Casa:78:5180 MHz:WPA2:AA\:BB\:CC\:00\:00\:01
+ :Casa:81:2437 MHz:WPA2:AA\:BB\:CC\:00\:00\:02
+ :Café\: 2º piso:55:2412 MHz:WPA1 WPA2:AA\:BB\:CC\:00\:00\:03
+ :Plaza libre:30:2462 MHz::AA\:BB\:CC\:00\:00\:04
+ ::62:5500 MHz:WPA2:AA\:BB\:CC\:00\:00\:05
+ :Vecino 🚀:48:5975 MHz:WPA3:AA\:BB\:CC\:00\:00\:06
+ :$(reboot); "x":20:2412 MHz:WPA2:AA\:BB\:CC\:00\:00\:07

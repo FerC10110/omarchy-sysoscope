@@ -1,0 +1,4 @@
+enp5s0:connected:Wired connection 1
+wlp3s0:connected:Casa
+wlp4s0:unavailable:
+lo:connected (externally):lo

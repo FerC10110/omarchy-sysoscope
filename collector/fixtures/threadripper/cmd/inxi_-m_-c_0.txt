@@ -1,0 +1,12 @@
+Memory:
+  System RAM: total: 48 GiB available: 47 GiB used: 17.81 GiB (37.9%)
+  Message: For most reliable report, use superuser + dmidecode.
+  Array-1: capacity: 512 GiB slots: 8 modules: 3 EC: None
+  Device-1: Channel-A DIMM 0 type: no module installed
+  Device-2: Channel-A DIMM 1 type: DDR4 size: 16 GiB speed: spec: 2133 MT/s actual: 1067 MT/s
+  Device-3: Channel-B DIMM 0 type: no module installed
+  Device-4: Channel-B DIMM 1 type: DDR4 size: 16 GiB speed: spec: 2133 MT/s actual: 1067 MT/s
+  Device-5: Channel-C DIMM 0 type: no module installed
+  Device-6: Channel-C DIMM 1 type: DDR4 size: 16 GiB speed: spec: 2133 MT/s actual: 1067 MT/s
+  Device-7: Channel-D DIMM 0 type: no module installed
+  Device-8: Channel-D DIMM 1 type: no module installed

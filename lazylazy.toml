@@ -1,0 +1,8 @@
+# lazylazy's tab for Sysoscope (see lazylazy's docs/plugins.md).
+schema = 1
+
+[[tab]]
+name = { en = "System", es = "Sistema" }
+command = ["bin/sysoscope-linux-{arch}", "lazylazy"]
+refresh = 2
+stream = true

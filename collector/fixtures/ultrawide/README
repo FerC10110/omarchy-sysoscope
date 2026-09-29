@@ -1,0 +1,27 @@
+ultrawide: la máquina de referencia de la tanda 7 (Energía y pantallas),
+verificada el 2026-09-27 (Hyprland 0.56.2, kernel 7.2.5-3-omarchy).
+
+Escrito a mano, en la forma que produce `sysoscope fixture capture
+--anonymize` (spec 2026-09-27-sysoscope-mantenimiento-design.md, §2.5 y la
+decisión 1 del plan de la tanda 7). No es una captura completa: solo lo que
+leen Energía y Dispositivos.
+
+- hypr/j-monitors.txt: j/monitors real, reducido a los campos que se leen
+  (name, width, height, refreshRate, scale, vrr, currentFormat,
+  colorManagementPreset, disabled, mirrorOf, availableModes): sin serial,
+  description ni workspaces.
+- root/sys/class/drm/card1-HDMI-A-1/edid: bloque base real del Samsung
+  S34J55x con los bytes 12-15 en cero y el serial como SERIAL (como EDID()
+  de la captura), sin bloques de extensión.
+- root/sys/power/mem_sleep: real.
+- root/sys/bus/usb/devices: el hub raíz usb1, el receptor Logitech (1-5) y
+  el teclado inalámbrico (1-6), con version, bDeviceClass, bInterfaceClass,
+  power/wakeup y port/peer (como .link) reales.
+- root/sys/bus/pci/devices: un puente PCI, una controladora USB y la placa
+  Intel I211, con power/wakeup reales; usr/share/hwdata/pci.ids recortado a
+  esos tres.
+- dbus.json: NameHasOwner de logind y ListInhibitors reales, con quién
+  como progN (prog1, prog2… en el orden en que aparecen; solo "kernel"
+  queda igual) y los motivos como "reason N"; ListUnitsByNames de las seis
+  unidades de system.WatchedUnits (reloj y firewall), con la forma del de
+  threadripper.

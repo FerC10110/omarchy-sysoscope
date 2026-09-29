@@ -1,0 +1,6 @@
+ESTAB 0      0      192.168.1.10:39172      203.0.113.54:443  users:(("chromium",pid=201,fd=48))
+	 cubic wscale:9,10 rto:373 bytes_sent:106912 bytes_acked:106913 bytes_received:93376 segs_out:3699
+ESTAB 0      0      192.168.1.10:39174      203.0.113.54:443  users:(("chromium",pid=201,fd=76))
+	 cubic bytes_sent:4167 bytes_acked:4168 bytes_received:5967 segs_out:564
+ESTAB 0      0      192.168.1.10:22000      198.51.100.7:22000  users:(("syncthing",pid=500,fd=12))
+	 cubic bytes_acked:5000 bytes_received:70000

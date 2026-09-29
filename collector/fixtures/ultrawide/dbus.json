@@ -1,0 +1,112 @@
+{
+ "system": {
+  "call org.freedesktop.DBus /org/freedesktop/DBus org.freedesktop.DBus.NameHasOwner org.freedesktop.login1": [
+   true
+  ],
+  "call org.freedesktop.login1 /org/freedesktop/login1 org.freedesktop.login1.Manager.ListInhibitors": [
+   [
+    [
+     "sleep",
+     "prog1",
+     "reason 1",
+     "delay",
+     1000,
+     1456
+    ],
+    [
+     "sleep",
+     "prog2",
+     "reason 2",
+     "delay",
+     0,
+     1382
+    ],
+    [
+     "sleep",
+     "prog3",
+     "reason 3",
+     "delay",
+     0,
+     1068
+    ]
+   ]
+  ],
+  "call org.freedesktop.systemd1 /org/freedesktop/systemd1 org.freedesktop.systemd1.Manager.ListUnitsByNames [systemd-timesyncd.service ufw.service firewalld.service nftables.service iptables.service ip6tables.service]": [
+   [
+    [
+     "systemd-timesyncd.service",
+     "Network Time Synchronization",
+     "loaded",
+     "active",
+     "running",
+     "",
+     "/org/freedesktop/systemd1/unit/systemd_2dtimesyncd_2eservice",
+     0,
+     "",
+     "/"
+    ],
+    [
+     "ufw.service",
+     "CLI Netfilter Manager",
+     "loaded",
+     "active",
+     "exited",
+     "",
+     "/org/freedesktop/systemd1/unit/ufw_2eservice",
+     0,
+     "",
+     "/"
+    ],
+    [
+     "firewalld.service",
+     "firewalld.service",
+     "not-found",
+     "inactive",
+     "dead",
+     "",
+     "/org/freedesktop/systemd1/unit/firewalld_2eservice",
+     0,
+     "",
+     "/"
+    ],
+    [
+     "nftables.service",
+     "nftables.service",
+     "not-found",
+     "inactive",
+     "dead",
+     "",
+     "/org/freedesktop/systemd1/unit/nftables_2eservice",
+     0,
+     "",
+     "/"
+    ],
+    [
+     "iptables.service",
+     "iptables.service",
+     "not-found",
+     "inactive",
+     "dead",
+     "",
+     "/org/freedesktop/systemd1/unit/iptables_2eservice",
+     0,
+     "",
+     "/"
+    ],
+    [
+     "ip6tables.service",
+     "ip6tables.service",
+     "not-found",
+     "inactive",
+     "dead",
+     "",
+     "/org/freedesktop/systemd1/unit/ip6tables_2eservice",
+     0,
+     "",
+     "/"
+    ]
+   ]
+  ]
+ },
+ "session": {}
+}

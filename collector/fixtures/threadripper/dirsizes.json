@@ -1,0 +1,12 @@
+{
+ "/home/user/.cache/yay": {
+  "size_b": 512753664
+ },
+ "/var/cache/pacman/pkg": {
+  "size_b": 6764573491,
+  "partial": true
+ },
+ "/var/lib/systemd/coredump": {
+  "size_b": 684720128
+ }
+}

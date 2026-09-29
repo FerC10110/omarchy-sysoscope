@@ -1,0 +1,9 @@
+laptop: archivos escritos a mano (no salen de una captura).
+
+Tanda 7 (Energía y pantallas):
+- root/sys/power/mem_sleep: "[s2idle] deep", el caso común de una laptop
+  moderna.
+- dbus.json: NameHasOwner de org.freedesktop.login1 y un ListInhibitors con
+  un block de handle-lid-switch y un delay, con quién como lo deja la
+  captura anonimizada (prog1, prog2 en el orden en que aparecen; solo
+  "kernel" queda igual).

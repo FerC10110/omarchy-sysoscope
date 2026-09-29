@@ -1,0 +1,298 @@
+{
+   "blockdevices": [
+      {
+         "name": "sda",
+         "kname": "sda",
+         "path": "/dev/sda",
+         "type": "disk",
+         "size": 12000138625024,
+         "model": "WDC WD120EFGX-68CPHN0",
+         "serial": "SERIAL1",
+         "tran": "sata",
+         "rota": true,
+         "fstype": null,
+         "mountpoints": [],
+         "pkname": null,
+         "label": null,
+         "children": [
+            {
+               "name": "sda1",
+               "kname": "sda1",
+               "path": "/dev/sda1",
+               "type": "part",
+               "size": 12000136527872,
+               "model": null,
+               "serial": null,
+               "tran": null,
+               "rota": true,
+               "fstype": "xfs",
+               "mountpoints": [],
+               "pkname": "sda",
+               "label": null
+            }
+         ]
+      },{
+         "name": "sdb",
+         "kname": "sdb",
+         "path": "/dev/sdb",
+         "type": "disk",
+         "size": 1000203804160,
+         "model": "WDC WD10EARS-00Y5B1",
+         "serial": "SERIAL2",
+         "tran": "sata",
+         "rota": true,
+         "fstype": null,
+         "mountpoints": [],
+         "pkname": null,
+         "label": null,
+         "children": [
+            {
+               "name": "sdb1",
+               "kname": "sdb1",
+               "path": "/dev/sdb1",
+               "type": "part",
+               "size": 1000200994816,
+               "model": null,
+               "serial": null,
+               "tran": null,
+               "rota": true,
+               "fstype": "ext4",
+               "mountpoints": [],
+               "pkname": "sdb",
+               "label": null
+            }
+         ]
+      },{
+         "name": "sdc",
+         "kname": "sdc",
+         "path": "/dev/sdc",
+         "type": "disk",
+         "size": 1000204886016,
+         "model": "WD Green 2.5 1000GB",
+         "serial": "SERIAL3",
+         "tran": "sata",
+         "rota": false,
+         "fstype": null,
+         "mountpoints": [],
+         "pkname": null,
+         "label": null,
+         "children": [
+            {
+               "name": "sdc1",
+               "kname": "sdc1",
+               "path": "/dev/sdc1",
+               "type": "part",
+               "size": 1000204123136,
+               "model": null,
+               "serial": null,
+               "tran": null,
+               "rota": false,
+               "fstype": "ext4",
+               "mountpoints": [],
+               "pkname": "sdc",
+               "label": "data"
+            }
+         ]
+      },{
+         "name": "sdd",
+         "kname": "sdd",
+         "path": "/dev/sdd",
+         "type": "disk",
+         "size": 240057409536,
+         "model": "SanDisk SDSSDXPS240G",
+         "serial": "SERIAL4",
+         "tran": "sata",
+         "rota": false,
+         "fstype": null,
+         "mountpoints": [],
+         "pkname": null,
+         "label": null,
+         "children": [
+            {
+               "name": "sdd1",
+               "kname": "sdd1",
+               "path": "/dev/sdd1",
+               "type": "part",
+               "size": 52428800,
+               "model": null,
+               "serial": null,
+               "tran": null,
+               "rota": false,
+               "fstype": "ntfs",
+               "mountpoints": [],
+               "pkname": "sdd",
+               "label": "System Reserved"
+            },{
+               "name": "sdd2",
+               "kname": "sdd2",
+               "path": "/dev/sdd2",
+               "type": "part",
+               "size": 239463151104,
+               "model": null,
+               "serial": null,
+               "tran": null,
+               "rota": false,
+               "fstype": "ntfs",
+               "mountpoints": [],
+               "pkname": "sdd",
+               "label": "win"
+            },{
+               "name": "sdd3",
+               "kname": "sdd3",
+               "path": "/dev/sdd3",
+               "type": "part",
+               "size": 537919488,
+               "model": null,
+               "serial": null,
+               "tran": null,
+               "rota": false,
+               "fstype": "ntfs",
+               "mountpoints": [],
+               "pkname": "sdd",
+               "label": null
+            }
+         ]
+      },{
+         "name": "zram0",
+         "kname": "zram0",
+         "path": "/dev/zram0",
+         "type": "disk",
+         "size": 50470060032,
+         "model": null,
+         "serial": null,
+         "tran": null,
+         "rota": false,
+         "fstype": "swap",
+         "mountpoints": [
+             "[SWAP]"
+         ],
+         "pkname": null,
+         "label": "zram0"
+      },{
+         "name": "nvme0n1",
+         "kname": "nvme0n1",
+         "path": "/dev/nvme0n1",
+         "type": "disk",
+         "size": 512110190592,
+         "model": "Samsung SSD 960 PRO 512GB",
+         "serial": "SERIAL5",
+         "tran": "nvme",
+         "rota": false,
+         "fstype": null,
+         "mountpoints": [],
+         "pkname": null,
+         "label": null,
+         "children": [
+            {
+               "name": "nvme0n1p1",
+               "kname": "nvme0n1p1",
+               "path": "/dev/nvme0n1p1",
+               "type": "part",
+               "size": 10737418240,
+               "model": null,
+               "serial": null,
+               "tran": "nvme",
+               "rota": false,
+               "fstype": "swap",
+               "mountpoints": [],
+               "pkname": "nvme0n1",
+               "label": null
+            },{
+               "name": "nvme0n1p2",
+               "kname": "nvme0n1p2",
+               "path": "/dev/nvme0n1p2",
+               "type": "part",
+               "size": 497142464512,
+               "model": null,
+               "serial": null,
+               "tran": "nvme",
+               "rota": false,
+               "fstype": "ext4",
+               "mountpoints": [],
+               "pkname": "nvme0n1",
+               "label": "linux"
+            },{
+               "name": "nvme0n1p3",
+               "kname": "nvme0n1p3",
+               "path": "/dev/nvme0n1p3",
+               "type": "part",
+               "size": 3220177408,
+               "model": null,
+               "serial": null,
+               "tran": "nvme",
+               "rota": false,
+               "fstype": "vfat",
+               "mountpoints": [],
+               "pkname": "nvme0n1",
+               "label": null
+            }
+         ]
+      },{
+         "name": "nvme1n1",
+         "kname": "nvme1n1",
+         "path": "/dev/nvme1n1",
+         "type": "disk",
+         "size": 2000398934016,
+         "model": "KINGSTON SNV2S2000G",
+         "serial": "SERIAL6",
+         "tran": "nvme",
+         "rota": false,
+         "fstype": null,
+         "mountpoints": [],
+         "pkname": null,
+         "label": null,
+         "children": [
+            {
+               "name": "nvme1n1p1",
+               "kname": "nvme1n1p1",
+               "path": "/dev/nvme1n1p1",
+               "type": "part",
+               "size": 2147483648,
+               "model": null,
+               "serial": null,
+               "tran": "nvme",
+               "rota": false,
+               "fstype": "vfat",
+               "mountpoints": [
+                   "/boot"
+               ],
+               "pkname": "nvme1n1",
+               "label": null
+            },{
+               "name": "nvme1n1p2",
+               "kname": "nvme1n1p2",
+               "path": "/dev/nvme1n1p2",
+               "type": "part",
+               "size": 1998249263104,
+               "model": null,
+               "serial": null,
+               "tran": "nvme",
+               "rota": false,
+               "fstype": "crypto_LUKS",
+               "mountpoints": [],
+               "pkname": "nvme1n1",
+               "label": null,
+               "children": [
+                  {
+                     "name": "root",
+                     "kname": "dm-0",
+                     "path": "/dev/mapper/root",
+                     "type": "crypt",
+                     "size": 1998232485888,
+                     "model": null,
+                     "serial": null,
+                     "tran": null,
+                     "rota": false,
+                     "fstype": "btrfs",
+                     "mountpoints": [
+                         "/var/cache/pacman/pkg", "/var/log", "/home", "/"
+                     ],
+                     "pkname": "nvme1n1p2",
+                     "label": null
+                  }
+               ]
+            }
+         ]
+      }
+   ]
+}

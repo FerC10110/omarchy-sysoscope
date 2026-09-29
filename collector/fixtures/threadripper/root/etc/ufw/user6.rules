@@ -1,0 +1,20 @@
+*filter
+:ufw6-user-input - [0:0]
+:ufw6-user-output - [0:0]
+:ufw6-user-forward - [0:0]
+### RULES ###
+
+### tuple ### allow udp 53317 ::/0 any ::/0 in
+-A ufw6-user-input -p udp --dport 53317 -j ACCEPT
+
+### tuple ### allow tcp 53317 ::/0 any ::/0 in
+-A ufw6-user-input -p tcp --dport 53317 -j ACCEPT
+
+### tuple ### allow tcp 1714:1764 ::/0 any ::/0 in comment=72756c652031
+-A ufw6-user-input -p tcp -m multiport --dports 1714:1764 -j ACCEPT
+
+### tuple ### allow udp 1714:1764 ::/0 any ::/0 in comment=72756c652032
+-A ufw6-user-input -p udp -m multiport --dports 1714:1764 -j ACCEPT
+
+### END RULES ###
+COMMIT

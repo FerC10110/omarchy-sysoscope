@@ -1,0 +1,17 @@
+#
+#	List of PCI ID's
+#
+0014  Loongson Technology LLC
+	7a00  Hyper Transport Bridge Controller
+1002  Advanced Micro Devices, Inc. [AMD/ATI]
+	15bf  Phoenix1
+	7550  Navi 48 [Radeon RX 9070/9070 XT/9070 GRE]
+		1002 7550  Radeon RX 9070 XT
+10de  NVIDIA Corporation
+	1e84  TU104 [GeForce RTX 2070 SUPER]
+	2206  GA102 [GeForce RTX 3080]
+		1462 3896  RTX 3080 VENTUS
+8086  Intel Corporation
+	46a6  Alder Lake-P GT2 [Iris Xe Graphics]
+
+C 00  Unclassified device

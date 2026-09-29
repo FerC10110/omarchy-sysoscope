@@ -1,0 +1,6 @@
+# gpu         pid   type     sm    mem    enc    dec    jpg    ofa    command
+# Idx           #    C/G      %      %      %      %      %      %    name
+    0        100     G      2      1      -      -      -      -    Hyprland
+    0        200     G      7      3      -      -      -      -    chromium
+    0        201   C+G      5      2      -      -      -      -    chromium
+    0        300     G      -      -      -      -      -      -    kitty

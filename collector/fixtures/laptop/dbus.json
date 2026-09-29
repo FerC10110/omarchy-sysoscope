@@ -1,0 +1,68 @@
+{
+ "system": {
+  "call org.freedesktop.DBus /org/freedesktop/DBus org.freedesktop.DBus.NameHasOwner org.bluez": [
+   true
+  ],
+  "call org.freedesktop.DBus /org/freedesktop/DBus org.freedesktop.DBus.NameHasOwner org.freedesktop.login1": [
+   true
+  ],
+  "call org.freedesktop.login1 /org/freedesktop/login1 org.freedesktop.login1.Manager.ListInhibitors": [
+   [
+    [
+     "handle-lid-switch",
+     "prog1",
+     "Lid handled by the compositor",
+     "block",
+     1000,
+     1180
+    ],
+    [
+     "sleep",
+     "prog2",
+     "NetworkManager needs to turn off networks",
+     "delay",
+     0,
+     801
+    ]
+   ]
+  ],
+  "objects org.bluez /": {
+   "/org/bluez/hci0": {
+    "org.bluez.Adapter1": {
+     "Name": "laptop",
+     "Powered": true
+    }
+   },
+   "/org/bluez/hci0/dev_02_00_00_00_00_0A": {
+    "org.bluez.Battery1": {
+     "Percentage": 70
+    },
+    "org.bluez.Device1": {
+     "Address": "02:00:00:00:00:0A",
+     "Connected": true,
+     "Name": "WH-1000XM4",
+     "Paired": true,
+     "Trusted": true
+    }
+   },
+   "/org/bluez/hci0/dev_02_00_00_00_00_0B": {
+    "org.bluez.Device1": {
+     "Address": "02:00:00:00:00:0B",
+     "Connected": false,
+     "Name": "Keyboard K380",
+     "Paired": true,
+     "Trusted": true
+    }
+   },
+   "/org/bluez/hci0/dev_02_00_00_00_00_0C": {
+    "org.bluez.Device1": {
+     "Address": "02:00:00:00:00:0C",
+     "Alias": "Speaker",
+     "Connected": false,
+     "Paired": false,
+     "Trusted": false
+    }
+   }
+  }
+ }
+}

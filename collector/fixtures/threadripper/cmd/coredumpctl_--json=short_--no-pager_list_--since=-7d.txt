@@ -1,0 +1,1 @@
+[{"corefile":"present","exe":"/prog1","pid":1310369,"sig":4,"size":101054178,"time":1789677734910827,"uid":1000},{"corefile":"present","exe":"/prog1","pid":1310465,"sig":4,"size":100847504,"time":1789677736672959,"uid":1000}]

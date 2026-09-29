@@ -1,0 +1,3 @@
+yay
+zen-browser-bin
+visual-studio-code-bin

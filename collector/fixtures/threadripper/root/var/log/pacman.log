@@ -1,0 +1,24 @@
+[2026-09-17T22:56:22-0300] [PACMAN] Running 'pacman'
+[2026-09-17T22:56:23-0300] [PACMAN] starting full system upgrade
+[2026-09-17T22:57:01-0300] [ALPM] upgraded pkg1
+[2026-09-17T22:57:01-0300] [ALPM] upgraded pkg2
+[2026-09-17T22:57:01-0300] [ALPM] upgraded pkg3
+[2026-09-17T22:57:09-0300] [ALPM] transaction completed
+[2026-09-22T20:41:27-0300] [PACMAN] Running 'pacman'
+[2026-09-22T20:41:27-0300] [ALPM] reinstalled pkg4
+[2026-09-22T20:41:31-0300] [ALPM] transaction completed
+[2026-09-22T20:41:31-0300] [PACMAN] Running 'pacman'
+[2026-09-22T20:41:32-0300] [PACMAN] starting full system upgrade
+[2026-09-22T20:41:34-0300] [ALPM] upgraded pkg5
+[2026-09-22T20:41:34-0300] [ALPM] upgraded pkg6
+[2026-09-22T20:41:34-0300] [ALPM] transaction completed
+[2026-09-22T20:41:52-0300] [PACMAN] Running 'pacman'
+[2026-09-22T20:41:52-0300] [ALPM] upgraded pkg7
+[2026-09-22T20:41:52-0300] [ALPM] upgraded pkg8
+[2026-09-22T20:41:53-0300] [ALPM] transaction completed
+[2026-09-22T20:41:53-0300] [PACMAN] Running 'pacman'
+[2026-09-22T20:41:53-0300] [PACMAN] Running 'pacman'
+[2026-09-22T20:42:22-0300] [PACMAN] Running 'pacman'
+[2026-09-22T20:42:25-0300] [ALPM] removed pkg9
+[2026-09-22T20:42:25-0300] [ALPM] removed pkg8
+[2026-09-22T20:42:25-0300] [ALPM] transaction completed

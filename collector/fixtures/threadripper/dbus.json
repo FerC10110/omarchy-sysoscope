@@ -1,0 +1,273 @@
+{
+ "session": {
+  "call org.freedesktop.systemd1 /org/freedesktop/systemd1 org.freedesktop.systemd1.Manager.ListUnitsFiltered [failed]": [
+   []
+  ]
+ },
+ "system": {
+  "call org.freedesktop.UDisks2 /org/freedesktop/UDisks2/drives/KINGSTON_SNV2S2000G_SERIAL6 org.freedesktop.UDisks2.NVMe.Controller.SmartGetAttributes map[]": [
+   {
+    "avail_spare": 100,
+    "cctemp": 352,
+    "critical_temp_time": 0,
+    "ctrl_busy_time": 523,
+    "media_errors": 0,
+    "num_err_log_entries": 1,
+    "percent_used": 0,
+    "power_cycles": 283,
+    "spare_thresh": 10,
+    "temp_sensors": [
+     303,
+     330,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "total_data_read": 1998627328000,
+    "total_data_written": 3921611776000,
+    "unsafe_shutdowns": 89,
+    "warning_temp_time": 0,
+    "wctemp": 350
+   }
+  ],
+  "call org.freedesktop.UDisks2 /org/freedesktop/UDisks2/drives/Samsung_SSD_960_PRO_512GB_SERIAL5 org.freedesktop.UDisks2.NVMe.Controller.SmartGetAttributes map[]": [
+   {
+    "avail_spare": 100,
+    "cctemp": 349,
+    "critical_temp_time": 0,
+    "ctrl_busy_time": 6808,
+    "media_errors": 0,
+    "num_err_log_entries": 2405,
+    "percent_used": 4,
+    "power_cycles": 1520,
+    "spare_thresh": 10,
+    "temp_sensors": [
+     292,
+     315,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "total_data_read": 62340820480000,
+    "total_data_written": 29939081728000,
+    "unsafe_shutdowns": 224,
+    "warning_temp_time": 0,
+    "wctemp": 346
+   }
+  ],
+  "call org.freedesktop.systemd1 /org/freedesktop/systemd1 org.freedesktop.systemd1.Manager.GetUnitFileState systemd-timesyncd.service": [
+   "enabled"
+  ],
+  "call org.freedesktop.systemd1 /org/freedesktop/systemd1 org.freedesktop.systemd1.Manager.ListUnitsFiltered [failed]": [
+   [
+    [
+     "nvidia-powerd.service",
+     "NVIDIA Dynamic Boost Daemon",
+     "loaded",
+     "failed",
+     "failed",
+     "",
+     "/org/freedesktop/systemd1/unit/nvidia_2dpowerd_2eservice",
+     0,
+     "",
+     "/"
+    ]
+   ]
+  ],
+  "net.hadess.PowerProfiles /net/hadess/PowerProfiles net.hadess.PowerProfiles ActiveProfile": "balanced",
+  "net.hadess.PowerProfiles /net/hadess/PowerProfiles net.hadess.PowerProfiles Profiles": [
+   {
+    "Driver": "placeholder",
+    "Profile": "power-saver"
+   },
+   {
+    "Driver": "placeholder",
+    "Profile": "balanced"
+   }
+  ],
+  "objects org.freedesktop.UDisks2 /org/freedesktop/UDisks2": {
+   "/org/freedesktop/UDisks2/drives/KINGSTON_SNV2S2000G_SERIAL6": {
+    "org.freedesktop.UDisks2.Drive": {
+     "Model": "KINGSTON SNV2S2000G",
+     "Serial": "SERIAL6",
+     "Size": 0,
+     "Vendor": ""
+    },
+    "org.freedesktop.UDisks2.NVMe.Controller": {
+     "SmartCriticalWarning": [],
+     "SmartPowerOnHours": 7659,
+     "SmartTemperature": 303,
+     "SmartUpdated": 1790190777
+    }
+   },
+   "/org/freedesktop/UDisks2/drives/Samsung_SSD_960_PRO_512GB_SERIAL5": {
+    "org.freedesktop.UDisks2.Drive": {
+     "Model": "Samsung SSD 960 PRO 512GB",
+     "Serial": "SERIAL5",
+     "Size": 512110190592,
+     "Vendor": ""
+    },
+    "org.freedesktop.UDisks2.NVMe.Controller": {
+     "SmartCriticalWarning": [],
+     "SmartPowerOnHours": 4408,
+     "SmartTemperature": 292,
+     "SmartUpdated": 1790190777
+    }
+   },
+   "/org/freedesktop/UDisks2/drives/SanDisk_SDSSDXPS240G_SERIAL4": {
+    "org.freedesktop.UDisks2.Drive": {
+     "Model": "SanDisk SDSSDXPS240G",
+     "Serial": "SERIAL4",
+     "Size": 240057409536,
+     "Vendor": ""
+    },
+    "org.freedesktop.UDisks2.Drive.Ata": {
+     "SmartEnabled": true,
+     "SmartFailing": false,
+     "SmartNumAttributesFailing": 0,
+     "SmartNumBadSectors": 34,
+     "SmartPowerOnSeconds": 114987600,
+     "SmartSupported": true,
+     "SmartTemperature": 298,
+     "SmartUpdated": 1790190777
+    }
+   },
+   "/org/freedesktop/UDisks2/drives/WDC_WD10EARS_00Y5B1_SERIAL2": {
+    "org.freedesktop.UDisks2.Drive": {
+     "Model": "WDC WD10EARS-00Y5B1",
+     "Serial": "SERIAL2",
+     "Size": 1000203804160,
+     "Vendor": ""
+    },
+    "org.freedesktop.UDisks2.Drive.Ata": {
+     "SmartEnabled": true,
+     "SmartFailing": false,
+     "SmartNumAttributesFailing": 0,
+     "SmartNumBadSectors": 0,
+     "SmartPowerOnSeconds": 148802400,
+     "SmartSupported": true,
+     "SmartTemperature": 302,
+     "SmartUpdated": 1790190777
+    }
+   },
+   "/org/freedesktop/UDisks2/drives/WDC_WD120EFGX_68CPHN0_SERIAL1": {
+    "org.freedesktop.UDisks2.Drive": {
+     "Model": "WDC WD120EFGX-68CPHN0",
+     "Serial": "SERIAL1",
+     "Size": 12000138625024,
+     "Vendor": ""
+    },
+    "org.freedesktop.UDisks2.Drive.Ata": {
+     "SmartEnabled": true,
+     "SmartFailing": false,
+     "SmartNumAttributesFailing": 0,
+     "SmartNumBadSectors": 0,
+     "SmartPowerOnSeconds": 13197600,
+     "SmartSupported": true,
+     "SmartTemperature": 310,
+     "SmartUpdated": 1790190777
+    }
+   },
+   "/org/freedesktop/UDisks2/drives/WD_Green_2_2e5_1000GB_SERIAL3": {
+    "org.freedesktop.UDisks2.Drive": {
+     "Model": "WD Green 2.5 1000GB",
+     "Serial": "SERIAL3",
+     "Size": 1000204886016,
+     "Vendor": ""
+    },
+    "org.freedesktop.UDisks2.Drive.Ata": {
+     "SmartEnabled": true,
+     "SmartFailing": false,
+     "SmartNumAttributesFailing": 0,
+     "SmartNumBadSectors": 7,
+     "SmartPowerOnSeconds": 51649200,
+     "SmartSupported": true,
+     "SmartTemperature": 292,
+     "SmartUpdated": 1790190777
+    }
+   }
+  },
+  "call org.freedesktop.systemd1 /org/freedesktop/systemd1 org.freedesktop.systemd1.Manager.ListUnitsByNames [systemd-timesyncd.service ufw.service firewalld.service nftables.service iptables.service ip6tables.service]": [
+   [
+    [
+     "systemd-timesyncd.service",
+     "Network Time Synchronization",
+     "loaded",
+     "active",
+     "running",
+     "",
+     "/org/freedesktop/systemd1/unit/systemd_2dtimesyncd_2eservice",
+     0,
+     "",
+     "/"
+    ],
+    [
+     "ufw.service",
+     "CLI Netfilter Manager",
+     "loaded",
+     "active",
+     "exited",
+     "",
+     "/org/freedesktop/systemd1/unit/ufw_2eservice",
+     0,
+     "",
+     "/"
+    ],
+    [
+     "firewalld.service",
+     "firewalld.service",
+     "not-found",
+     "inactive",
+     "dead",
+     "",
+     "/org/freedesktop/systemd1/unit/firewalld_2eservice",
+     0,
+     "",
+     "/"
+    ],
+    [
+     "nftables.service",
+     "nftables.service",
+     "not-found",
+     "inactive",
+     "dead",
+     "",
+     "/org/freedesktop/systemd1/unit/nftables_2eservice",
+     0,
+     "",
+     "/"
+    ],
+    [
+     "iptables.service",
+     "iptables.service",
+     "not-found",
+     "inactive",
+     "dead",
+     "",
+     "/org/freedesktop/systemd1/unit/iptables_2eservice",
+     0,
+     "",
+     "/"
+    ],
+    [
+     "ip6tables.service",
+     "ip6tables.service",
+     "not-found",
+     "inactive",
+     "dead",
+     "",
+     "/org/freedesktop/systemd1/unit/ip6tables_2eservice",
+     0,
+     "",
+     "/"
+    ]
+   ]
+  ]
+ }
+}

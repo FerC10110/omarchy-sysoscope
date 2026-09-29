@@ -1,0 +1,4 @@
+ 0 [Generic        ]: HDA-Intel - HD-Audio Generic
+                      HD-Audio Generic at 0xbb100000 irq 120
+ 1 [NVidia         ]: HDA-Intel - HDA NVidia
+                      HDA NVidia at 0x9e080000 irq 119

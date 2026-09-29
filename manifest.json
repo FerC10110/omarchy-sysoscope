@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "id": "io.github.ferc10110.sysoscope",
+  "name": "Sysoscope",
+  "version": "0.2.0",
+  "author": "Fernando Cancro",
+  "license": "MIT",
+  "description": "Your hardware and what it is doing right now: CPU, memory, GPU, disks, network, sensors and power in the bar, and a full inventory in the panel. Measured, private and light.",
+  "kinds": ["service", "bar-widget"],
+  "entryPoints": { "service": "Service.qml", "barWidget": "BarWidget.qml" },
+  "barWidget": {
+    "displayName": "Sysoscope",
+    "description": "System monitor and hardware inventory",
+    "category": "System",
+    "aliases": ["system", "monitor", "hardware", "cpu", "gpu", "sensors", "sysoscope"],
+    "allowMultiple": false,
+    "defaultSection": "right"
+  }
+}

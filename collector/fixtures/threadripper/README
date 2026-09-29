@@ -1,0 +1,46 @@
+Hand-written files (tanda 4, Maintenance), with this machine's data cut at
+the fixture's clock (2026-09-23 12:00 UTC), in the exact form that
+`sysoscope fixture capture --anonymize` writes them:
+
+- root/var/log/pacman.log (package names replaced by pkgN)
+- root/usr/lib/modules/*/vmlinuz, root/sys/module/nvidia/version,
+  root/var/lib/pacman/local/nvidia-utils-610.57.04-1/
+- root/etc/pacman.conf, root/etc/conf.d/snapper, root/etc/snapper/configs/root,
+  root/usr/share/dbus-1/system-services/org.opensuse.Snapper.service
+- root/var/cache/pacman/pkg/, root/home/user/.cache/yay/,
+  root/var/lib/systemd/coredump/ (markers) and dirsizes.json
+- root/run/user/1000/hypr/fixture/hyprland.lock, root/proc/613755/exe.link
+- cmd/journalctl_--disk-usage.txt
+
+Everything else was captured by the collector.
+
+Tanda 5 (Health), also by hand:
+
+- root/proc/vmstat: an excerpt of this machine's (only oom_kill is read)
+- cmd/journalctl_-b_-p_err_…: this boot's 32 errors with this machine's
+  sources (23 kernel, 4 wpa_supplicant, 2 systemd-coredump, 1 bluetoothd,
+  1 qml6, 1 sddm-helper), messages replaced by "message N", dated before
+  the fixture's clock
+- cmd/coredumpctl_--json=short_…: the two crashes within 7 days of the
+  fixture's clock (prog1, SIGILL, 2026-09-17), anonymized as
+  `sysoscope fixture capture --anonymize` would write them
+- cmd/journalctl_…_SYSLOG_IDENTIFIER=systemd-oomd.txt: empty (no kills)
+
+Tanda 6 (Security), also by hand, with this machine's data, reduced:
+program names and rule comments are pseudonyms as
+`sysoscope fixture capture --anonymize` writes them (proc/2210/comm is
+prog2, proc/3120/comm prog3 — prog1 is the coredumpctl crash — and ufw's
+comments are "rule N", numbered per file), the link-local address and the
+LUKS UUID are replaced, and the private addresses (172.17.0.1,
+192.168.100.0/24, …) are left as they were rather than moved to the
+documentation ranges the capture would use:
+
+- root/proc/net/{tcp,tcp6,udp,udp6} (plus one established TCP, one connected
+  UDP and one ephemeral UDP socket, which the collector must skip; a
+  capture keeps only listening TCP and unconnected UDP lines)
+- root/proc/sys/net/ipv4/ip_local_port_range, root/etc/passwd (reduced)
+- root/etc/ufw/{ufw.conf,user.rules,user6.rules}, root/etc/default/ufw
+- root/proc/2210 and root/proc/3120 (comm and the socket fds as .link)
+- root/sys/block/dm-0 (dm/uuid, dm/name, slaves/nvme1n1p2)
+- dbus.json: ListUnitsByNames with ufw.service, firewalld.service,
+  nftables.service, iptables.service and ip6tables.service

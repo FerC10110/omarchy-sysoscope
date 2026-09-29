@@ -1,0 +1,4 @@
+[D-BUS Service]
+Name=org.opensuse.Snapper
+Exec=/usr/bin/snapperd
+User=root

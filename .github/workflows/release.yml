@@ -1,0 +1,54 @@
+name: release
+
+# A tag vX.Y.Z publishes the release. Nothing is built here that is not
+# already committed: the job rebuilds bin/ from source, fails if a single byte
+# differs, attests the committed binaries and attaches them to the release.
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: read
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      id-token: write
+      attestations: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e # v7.0.0
+        with:
+          go-version-file: collector/go.mod
+          cache: false
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 26
+      - name: Tag matches the version
+        env:
+          TAG: ${{ github.ref_name }}
+        run: |
+          v="v$(cat collector/VERSION)"
+          m="v$(jq -r .version manifest.json)"
+          [ "$TAG" = "$v" ] && [ "$TAG" = "$m" ] || { echo "tag $TAG, collector/VERSION $v, manifest $m"; exit 1; }
+      - name: Test
+        run: make test
+      - name: Binaries match the source
+        run: make verify-bin
+      - uses: actions/attest-build-provenance@4d101475d8b20a2381f78447822ac1eab6504dd8 # v4.2.2
+        with:
+          subject-path: bin/sysoscope-linux-*
+      - name: Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ github.ref_name }}
+        run: |
+          awk -v v="${TAG#v}" '$0 ~ "^## " v "( |$)" {on=1; next} /^## / {on=0} on' CHANGELOG.md > notes.md
+          [ -s notes.md ] || { echo "CHANGELOG.md has no section for ${TAG#v}"; exit 1; }
+          gh release create "$TAG" --title "$TAG" --notes-file notes.md --verify-tag \
+            bin/sysoscope-linux-amd64 bin/sysoscope-linux-arm64 bin/SHA256SUMS

@@ -1,0 +1,2 @@
+alsa_output.pci-0000_0c_00.3.analog-stereo	1
+alsa_output.pci-0000_42_00.1.hdmi-stereo	1

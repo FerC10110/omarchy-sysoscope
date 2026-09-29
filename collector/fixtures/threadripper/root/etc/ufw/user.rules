@@ -1,0 +1,29 @@
+*filter
+:ufw-user-input - [0:0]
+:ufw-user-output - [0:0]
+:ufw-user-forward - [0:0]
+### RULES ###
+
+### tuple ### allow udp 53317 0.0.0.0/0 any 0.0.0.0/0 in
+-A ufw-user-input -p udp --dport 53317 -j ACCEPT
+
+### tuple ### allow tcp 53317 0.0.0.0/0 any 0.0.0.0/0 in
+-A ufw-user-input -p tcp --dport 53317 -j ACCEPT
+
+### tuple ### allow udp 53 172.17.0.1 any 172.16.0.0/12 in comment=72756c652031
+-A ufw-user-input -p udp -d 172.17.0.1 --dport 53 -s 172.16.0.0/12 -j ACCEPT
+
+### tuple ### allow udp 53 172.17.0.1 any 192.168.0.0/16 in comment=72756c652032
+-A ufw-user-input -p udp -d 172.17.0.1 --dport 53 -s 192.168.0.0/16 -j ACCEPT
+
+### tuple ### allow tcp 2283 0.0.0.0/0 any 192.168.100.0/24 in
+-A ufw-user-input -p tcp --dport 2283 -s 192.168.100.0/24 -j ACCEPT
+
+### tuple ### allow tcp 1714:1764 0.0.0.0/0 any 0.0.0.0/0 in comment=72756c652033
+-A ufw-user-input -p tcp -m multiport --dports 1714:1764 -j ACCEPT
+
+### tuple ### allow udp 1714:1764 0.0.0.0/0 any 0.0.0.0/0 in comment=72756c652034
+-A ufw-user-input -p udp -m multiport --dports 1714:1764 -j ACCEPT
+
+### END RULES ###
+COMMIT
