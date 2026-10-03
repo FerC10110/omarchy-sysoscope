@@ -38,6 +38,8 @@ var STRINGS = {
     "Settings": "Ajustes",
     "Components": "Componentes",
     "System": "Sistema",
+    "ONLINE": "EN LÍNEA",
+    "Omarchy Linux · Hardware Summary": "Omarchy Linux · Resumen del hardware",
     "Loading…": "Cargando…",
     "… %1 more": "… %1 más",
     "In the content": "En el contenido",

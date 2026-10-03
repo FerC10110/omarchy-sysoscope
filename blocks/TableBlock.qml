@@ -1,9 +1,10 @@
 import QtQuick
 import QtQuick.Layouts
 import qs.Commons
+import "../Icons.js" as Icons
 
-// A table: dim headers, then the rows (the first 50).
-ColumnLayout {
+// A table styled as an Omarchy card: clean header, dim column titles, and selectable rows.
+Rectangle {
   id: table
   property var block: ({})
   property var host: null
@@ -11,15 +12,56 @@ ColumnLayout {
   readonly property var columns: block.columns || []
   readonly property var rows: block.rows || []
   readonly property var shown: rows.slice(0, limit)
-  spacing: Style.space(4)
 
-  Label { visible: text !== ""; host: table.host; text: table.block.title || "" }
 
-  GridLayout {
-    Layout.fillWidth: true
-    columns: Math.max(1, table.columns.length)
-    columnSpacing: Style.space(14)
-    rowSpacing: Style.space(3)
+  Layout.fillWidth: true
+  implicitHeight: tableCol.implicitHeight + Style.space(24)
+  radius: Style.space(10)
+  color: table.host ? table.host.card : "transparent"
+  border.width: 1
+  border.color: table.host ? table.host.track : "transparent"
+
+  ColumnLayout {
+    id: tableCol
+    anchors.left: parent.left
+    anchors.right: parent.right
+    anchors.top: parent.top
+    anchors.margins: Style.space(12)
+    spacing: Style.space(8)
+
+    RowLayout {
+      Layout.fillWidth: true
+      visible: (table.block.title || "") !== ""
+      spacing: Style.space(8)
+
+      Text {
+        text: Icons.table(table.block.title)
+        textFormat: Text.PlainText
+        color: table.host ? table.host.accent : Color.accent
+        font.family: table.host ? table.host.fontFamily : Style.font.family
+        font.pixelSize: Style.font.body
+      }
+
+      Label {
+        Layout.fillWidth: true
+        host: table.host
+        text: table.block.title || ""
+      }
+    }
+
+    Rectangle {
+      Layout.fillWidth: true
+      height: 1
+      visible: (table.block.title || "") !== ""
+      color: table.host ? table.host.track : "transparent"
+    }
+
+    GridLayout {
+      Layout.fillWidth: true
+      columns: Math.max(1, table.columns.length)
+      columnSpacing: Style.space(14)
+      rowSpacing: Style.space(4)
+
 
     Repeater {
       model: table.columns.length * (table.shown.length + 1)
@@ -78,12 +120,14 @@ ColumnLayout {
     }
   }
 
-  Text {
-    visible: table.rows.length > table.limit
-    text: table.host ? table.host.t("… %1 more", [table.rows.length - table.limit]) : ""
-    textFormat: Text.PlainText
-    color: table.host ? table.host.dim : Color.muted
-    font.family: table.host ? table.host.fontFamily : Style.font.family
-    font.pixelSize: Style.font.bodySmall
+    Text {
+      visible: table.rows.length > table.limit
+      text: table.host ? table.host.t("… %1 more", [table.rows.length - table.limit]) : ""
+      textFormat: Text.PlainText
+      color: table.host ? table.host.dim : Color.muted
+      font.family: table.host ? table.host.fontFamily : Style.font.family
+      font.pixelSize: Style.font.bodySmall
+    }
   }
 }
+

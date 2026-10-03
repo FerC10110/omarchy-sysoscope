@@ -455,12 +455,25 @@ Panel {
                 Layout.fillWidth: true
                 implicitHeight: row.implicitHeight + Style.space(8)
                 radius: Style.space(6)
-                color: parent.selected ? sysoscope.card : "transparent"
+                color: parent.selected ? sysoscope.card : (itemMouse.containsMouse ? sysoscope.track : "transparent")
+                border.width: 1
+                border.color: parent.selected ? Qt.rgba(sysoscope.accent.r, sysoscope.accent.g, sysoscope.accent.b, 0.25) : "transparent"
+
+                Rectangle {
+                  anchors.left: parent.left
+                  anchors.verticalCenter: parent.verticalCenter
+                  anchors.leftMargin: Style.space(2)
+                  width: Style.space(3)
+                  height: parent.height - Style.space(10)
+                  radius: Style.space(2)
+                  visible: parent.parent.selected
+                  color: sysoscope.accent
+                }
 
                 RowLayout {
                   id: row
                   anchors.fill: parent
-                  anchors.leftMargin: Style.space(8)
+                  anchors.leftMargin: Style.space(10)
                   anchors.rightMargin: Style.space(8)
                   spacing: Style.space(8)
                   Text {
@@ -499,7 +512,9 @@ Panel {
                   }
                 }
                 MouseArea {
+                  id: itemMouse
                   anchors.fill: parent
+                  hoverEnabled: true
                   cursorShape: Qt.PointingHandCursor
                   onClicked: {
                     sysoscope.select(modelData.id)
@@ -576,6 +591,13 @@ Panel {
           Item { Layout.fillHeight: true; visible: !hitList.visible }
         }
 
+        // Vertical divider between sidebar and content
+        Rectangle {
+          Layout.fillHeight: true
+          width: 1
+          color: sysoscope.track
+        }
+
         // ---- content
         ColumnLayout {
           Layout.fillWidth: true
@@ -585,7 +607,27 @@ Panel {
           RowLayout {
             id: titleRow
             Layout.fillWidth: true
-            Layout.bottomMargin: Style.space(4)
+            Layout.bottomMargin: Style.space(2)
+            spacing: Style.space(10)
+
+            Rectangle {
+              width: Style.space(26)
+              height: Style.space(26)
+              radius: Style.space(6)
+              color: Qt.rgba(sysoscope.accent.r, sysoscope.accent.g, sysoscope.accent.b, 0.12)
+              border.width: 1
+              border.color: Qt.rgba(sysoscope.accent.r, sysoscope.accent.g, sysoscope.accent.b, 0.25)
+
+              Text {
+                anchors.centerIn: parent
+                text: PanelModel.iconOf(sysoscope.current)
+                textFormat: Text.PlainText
+                color: sysoscope.accent
+                font.family: sysoscope.fontFamily
+                font.pixelSize: Style.font.bodySmall
+              }
+            }
+
             Text {
               Layout.fillWidth: true
               text: sysoscope.currentTitle || "Sysoscope"
@@ -598,7 +640,34 @@ Panel {
               font.capitalization: Font.AllUppercase
               font.letterSpacing: Style.font.subtitle * 0.12
             }
-            Label { host: sysoscope; text: "Sysoscope" }
+
+            Rectangle {
+              implicitWidth: omarchyPill.implicitWidth + Style.space(12)
+              implicitHeight: omarchyPill.implicitHeight + Style.space(4)
+              radius: Style.space(4)
+              color: sysoscope.card
+              border.width: 1
+              border.color: sysoscope.track
+
+              Text {
+                id: omarchyPill
+                anchors.centerIn: parent
+                text: "OMARCHY"
+                textFormat: Text.PlainText
+                color: sysoscope.dim
+                font.family: sysoscope.fontFamily
+                font.pixelSize: Style.font.caption
+                font.bold: true
+                font.letterSpacing: 1.2
+              }
+            }
+          }
+
+          Rectangle {
+            Layout.fillWidth: true
+            height: 1
+            color: sysoscope.track
+            Layout.bottomMargin: Style.space(2)
           }
 
           TextBlock {
