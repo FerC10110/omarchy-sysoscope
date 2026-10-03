@@ -2,15 +2,16 @@ import QtQuick
 import QtQuick.Layouts
 import qs.Commons
 
-// Each child block on its own card, as many per row as fit at ~170 px. A
-// card with a link opens that section.
+// Each child block on its own Omarchy card with hover feedback and balanced columns.
 GridLayout {
   id: cards
   property var block: ({})
   property var host: null
-  columns: Math.max(1, Math.floor(width / Style.space(170)))
-  columnSpacing: Style.space(8)
-  rowSpacing: Style.space(8)
+
+  readonly property int blockCount: (cards.block.blocks || []).length
+  columns: blockCount === 4 && width < Style.space(680) ? 2 : Math.max(1, Math.min(blockCount > 0 ? blockCount : 1, Math.floor(width / Style.space(155))))
+  columnSpacing: Style.space(10)
+  rowSpacing: Style.space(10)
 
   Repeater {
     model: cards.block.blocks || []
@@ -20,11 +21,31 @@ GridLayout {
       Layout.fillWidth: true
       Layout.fillHeight: true
       Layout.preferredWidth: 1
-      implicitHeight: inner.implicitHeight + Style.space(24)
-      radius: Style.space(8)
-      color: cards.host ? cards.host.card : "transparent"
+      implicitHeight: inner.implicitHeight + Style.space(26)
+      radius: Style.space(10)
+      color: cards.host ? (cardMouse.containsMouse && (card.modelData.link || "") !== ""
+              ? Qt.tint(cards.host.card, Qt.rgba(cards.host.accent.r, cards.host.accent.g, cards.host.accent.b, 0.08))
+              : cards.host.card) : "transparent"
       border.width: 1
-      border.color: cards.host ? cards.host.track : "transparent"
+      border.color: cardMouse.containsMouse && (card.modelData.link || "") !== ""
+              ? (cards.host ? cards.host.accent : Color.accent)
+              : (cards.host ? cards.host.track : "transparent")
+
+      Behavior on border.color { ColorAnimation { duration: 150 } }
+      Behavior on color { ColorAnimation { duration: 150 } }
+
+      Text {
+        anchors.top: parent.top
+        anchors.right: parent.right
+        anchors.margins: Style.space(10)
+        visible: (card.modelData.link || "") !== ""
+        text: "›"
+        textFormat: Text.PlainText
+        color: cardMouse.containsMouse && cards.host ? cards.host.accent : (cards.host ? cards.host.dim : Color.muted)
+        font.family: cards.host ? cards.host.fontFamily : Style.font.family
+        font.pixelSize: Style.font.body
+        font.bold: true
+      }
 
       Loader {
         id: inner
@@ -40,7 +61,9 @@ GridLayout {
       }
 
       MouseArea {
+        id: cardMouse
         anchors.fill: parent
+        hoverEnabled: true
         enabled: (card.modelData.link || "") !== ""
         cursorShape: enabled ? Qt.PointingHandCursor : Qt.ArrowCursor
         onClicked: if (cards.host) cards.host.follow(card.modelData.link)
@@ -48,3 +71,4 @@ GridLayout {
     }
   }
 }
+
